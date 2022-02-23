@@ -16,11 +16,87 @@ main {
 }
 
 /* solution styles */
+header{
+  padding:5px;
+  height:90px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+}
 
+.menu-button{
+  position: absolute;
+  top:0;
+  left:20px;
+  bottom: 0;
+  height:33px;
+  margin: auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;  
+  
+}
 
+.menu-button > .burger{
+  border-radius: 10px;
+  width:45px;
+  height:3px;
+  background-color: #fff;
+}
+.menu-button > .burger:last-child{
+  margin-bottom: 0;
+}
+.burger{
+  transition: all .2s;
+  transform: rotate(0);
+}
+.burger.one{
+  transform-origin: top left;
+}
+.burger.one.close{
+  transform: rotate(45deg);
+}
 
-/* open state */
+.burger.two.close{
+  display: none;
+}
 
+.burger.three{
+  transform-origin: bottom left;
+}
+.burger.three.close{
+  transform: rotate(-45deg);
+}
 
+.site-title{
+  color: #eee;
+  font-weight: 700;
+  font-size: 30px;
+  margin-right:10px;
+}
 
-/* transitions */
+.sidenav{
+  height: 100%;
+  width:0;
+  top:0;
+  left:0;
+  position: fixed;
+  background-color: #000;
+  transition: .4s;
+  z-index: 1;
+  padding-top:90px;
+  overflow-x: hidden;
+}
+.sidenav a {
+  display: block;
+  color:#fff;
+  padding:10px 20px;
+}
+
+.sidenav.open{
+  width:250px;
+}
