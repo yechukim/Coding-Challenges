@@ -34,10 +34,6 @@ body {
 }
 input {
 	opacity: 0;
-	position: absolute;
-	z-index: 1;
-	width: 80px;
-	height: 30px;
 }
 input:checked + .switch > div {
 	background-color: #333;
