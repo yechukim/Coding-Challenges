@@ -1,11 +1,48 @@
 :root {
-  --on: #6948ed;
-  --off: #555;
-  --toggle-width: 80px;
-  --toggle-height: 30px;
+	--on: #6948ed;
+	--off: #555;
+	--toggle-width: 80px;
+	--toggle-height: 30px;
 }
 body {
-  background: #333;
+	background: #333;
 }
 
 /* solution styles */
+.switch {
+	width: var(--toggle-width);
+	height: var(--toggle-height);
+	background-color: var(--off);
+	border-radius: 2em;
+	display: flex;
+	align-items: center;
+	transition: 0.4s;
+	position: relative;
+	padding-left: 5px;
+	padding-right: 5px;
+	box-sizing: border-box;
+}
+.switch > div {
+	transition: left 0.4s;
+}
+.point {
+	width: 25px;
+	height: 25px;
+	background-color: #fff;
+	border-radius: 2em;
+	position: absolute;
+}
+input {
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	width: 80px;
+	height: 30px;
+}
+input:checked + .switch > div {
+	background-color: #333;
+	left: 50px;
+}
+input:checked + .switch {
+	background-color: var(--on);
+}
