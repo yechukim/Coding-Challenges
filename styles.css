@@ -1,19 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=VT323&display=swap');
 
 :root {
-  --primary: #00b29d;
+	--primary: #00b29d;
 }
 
 body {
-  background: #f2f2f2;
-  font-family: "Poppins";
+	background: #f2f2f2;
+	font-family: 'Poppins';
 }
 .tabs {
-  width: 600px;
-  margin: 100px auto;
+	width: 600px;
+	margin: 100px auto;
 }
 
 /* buttons */
-
+.buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.buttons > a {
+	text-align: center;
+	border: 1px solid var(--primary);
+	text-decoration: none;
+	color: #000;
+}
+.buttons > a:active {
+	background-color: var(--primary);
+}
 
 /* panels */
+.panels .panel {
+	display: none;
+}
+.panels .panel:target {
+	display: block;
+}
